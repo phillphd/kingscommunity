@@ -219,7 +219,7 @@ add_filter('timber_context', 'mytheme_timber_context');
 
 function imgix($image_url, $width = '') {
 	// $imgix_domain = 'https://therocc.imgix.net';
-	$imgix_domain = 'http://kcc.local/';
+	$imgix_domain = 'http://kingscc.wpengine.com/';
 	$the_url = parse_url($image_url, 5);
 	$the_params = '?auto=compress,format&w=' . $width;
     return $imgix_domain . $the_url . $the_params;
