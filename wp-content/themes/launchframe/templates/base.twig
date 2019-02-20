@@ -1,0 +1,50 @@
+{% block html_head_container %}
+
+{% include 'html-header.twig' %}
+	{% block head %}
+	{% endblock %}
+		<script src='https://www.google.com/recaptcha/api.js'></script>
+	</head>
+{% endblock %}
+
+	<body class="{{body_class}}" data-template="base.twig">
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+			ga('create', 'UA-89123160-1', 'auto');
+			ga('send', 'pageview');
+		</script>
+		
+		{% if options.alert_title %}
+			<div class="alert-wrapper">
+				<div class="alert">
+					<div class="alert__content">
+						<div class="alert__header">{{ options.alert_title }}</div>
+						<div class="alert__subheader">{{ options.alert_subtitle }}</div>
+						<a class="alert__button btn" href="{{ options.alert_button_url }}">{{ options.alert_button_text }}</a>
+					</div>
+				</div>
+			</div>
+		{% endif %}
+		
+		<header>
+			<a href="/"><img src="{{ theme.link }}/assets/src/img/mark_logo.png'" style="transform: scale(.65);" /></a>
+			{% include 'nav.twig' %}
+		</header>
+
+		<main class="site-main">
+			{% block content %}
+				Sorry, no content
+			{% endblock %}
+		</main>
+
+		{% block footer %}
+			<footer class="site-footer">
+				{% include 'footer.twig' %}
+			</footer>
+			{{ function('wp_footer') }}
+		{% endblock %}
+	</body>
+</html>

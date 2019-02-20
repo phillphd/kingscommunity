@@ -1,0 +1,24 @@
+<svg width="24px" height="20px" viewBox="0 0 24 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <path d="M27,6 L5,6 C4.448,6 4,6.447 4,7 L4,25 C4,25.553 4.448,26 5,26 L27,26 C27.552,26 28,25.553 28,25 L28,7 C28,6.447 27.552,6 27,6 Z M12.207,19.207 L9.707,21.707 C9.512,21.902 9.256,22 9,22 C8.744,22 8.488,21.902 8.293,21.707 C7.902,21.316 7.902,20.684 8.293,20.293 L10.793,17.793 L12.207,19.207 Z M23.707,21.707 C23.512,21.902 23.256,22 23,22 C22.744,22 22.488,21.902 22.293,21.707 L19.793,19.207 L21.207,17.793 L23.707,20.293 C24.098,20.684 24.098,21.316 23.707,21.707 Z M23.707,11.707 L16.707,18.707 C16.512,18.902 16.256,19 16,19 C15.744,19 15.488,18.902 15.293,18.707 L8.293,11.707 C7.902,11.316 7.902,10.684 8.293,10.293 C8.684,9.902 9.316,9.902 9.707,10.293 L16,16.586 L22.293,10.293 C22.684,9.902 23.316,9.902 23.707,10.293 C24.098,10.684 24.098,11.316 23.707,11.707 Z" id="path-email"></path>
+    </defs>
+    <g id="↳-Logos-&amp;-Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="03.-Components-/-Footer-/-Desktop" transform="translate(-1023.000000, -64.000000)">
+            <g id="footer">
+                <g id="contactBar">
+                    <g id="socialIcons" transform="translate(1019.000000, 58.000000)">
+                        <g id="Icons-/-32px-/-Email">
+                            <mask id="mask-email" fill="white">
+                                <use xlink:href="#path-email"></use>
+                            </mask>
+                            <g id="Email" fill-rule="nonzero"></g>
+                            <g id="Branding-/-Colors-/-Neutral-80" mask="url(#mask-email)" fill="#273040" fill-rule="evenodd">
+                                <rect id="🎨-Color" x="0" y="0" width="32" height="32"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

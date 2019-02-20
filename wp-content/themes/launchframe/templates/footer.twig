@@ -1,0 +1,82 @@
+<footer>
+	<div class="connect">
+		<div class="container">
+			<div class="row" style="position: relative;">
+				<div class="col-xs-12 col-md-4 col-lg-3 mail-address">
+					{% if options.church_address %}
+						<p class="connect__header">Address</p>
+						<p class="connect__body">{{ options.church_address }}
+						<br />330.206.8356</p>
+					{% endif %}
+				</div>
+				<div class="col-xs-12 col-md-4 col-lg-3 mail-address">
+					{% if options.church_mailing_address %}
+						<p class="connect__header">Mailing Address</p>
+						<p class="connect__body">{{ options.church_mailing_address }}</p>
+					{% endif %}
+				</div>
+				<ul class="connect__social">
+					<li><a href="mailto:office@therocc.com">{% include 'assets/src/img/icons/32px/email.svg' %}</a></li>
+					<li><a href="https://www.instagram.com/rocctheboro/">{% include 'assets/src/img/icons/32px/instagram.svg' %}</a></li>
+					<li><a href="https://www.facebook.com/ROCCTheBoro/">{% include 'assets/src/img/icons/32px/facebook.svg' %}</a></li>
+					<li><a href="https://twitter.com/rocctheboro">{% include 'assets/src/img/icons/32px/twitter.svg' %}</a></li>
+					<li><a href="https://www.youtube.com/channel/UCXECb8jryEe4zbBZapyZJOA">{% include 'assets/src/img/icons/32px/youtube.svg' %}</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="container vp-xs-top-4 vp-xs-bottom-4 vp-md-bottom-7">
+		<div class="row">
+			<div class="col-xs-12" style="overflow: hidden;">
+				<div class="footer-menu-wrapper">
+					<div class="footer-menu">
+						{% if footerNav1.get_items %}
+							<h5 class="footer-menu__title"><strong>{{footerNav1.title}}</strong></h5>
+							<ul class="footer-menu__list">
+								{% for item in footerNav1.get_items %}
+									<li class="{{item.classes | join(' ')}}"><a href="{{item.get_link}}">{{item.title}}</a></li>
+								{% endfor %}
+							</ul>
+						{% endif %}
+					</div>
+					<div class="footer-menu footer-menu--wrap">
+						{% if footerNav2.get_items %}
+							<h5 class="footer-menu__title"><strong>{{footerNav2.title}}</strong></h5>
+							<ul class="footer-menu__list">
+								{% for item in footerNav2.get_items %}
+									<li class="{{item.classes | join(' ')}}"><a href="{{item.get_link}}">{{item.title}}</a></li>
+								{% endfor %}
+							</ul>
+						{% endif %}
+					</div>
+					<div class="footer-menu footer-menu--wrap">
+						{% if footerNav3.get_items %}
+							<h5 class="footer-menu__title"><strong>{{footerNav3.title}}</strong></h5>
+							<ul class="footer-menu__list">
+								{% for item in footerNav3.get_items %}
+									<li class="{{item.classes | join(' ')}}"><a href="{{item.get_link}}">{{item.title}}</a></li>
+								{% endfor %}
+							</ul>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="base-wrapper">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="base">
+						<div class="base__mark">
+							<img src="{{ theme.link }}/assets/src/img/mark_footer.png'" style="transform: scale(.5);" />
+						</div>
+						<div class="base__copy">
+							&copy; {{"now"|date('Y')}} King's Community Church. All Rights Reserved.
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>

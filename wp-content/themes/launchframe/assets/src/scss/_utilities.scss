@@ -1,0 +1,32 @@
+.clearfix,
+.cf,
+.clear {
+    overflow: auto;
+}
+
+.u-abs-full {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+}
+
+.bg-img,
+%bg-img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-map {
+    right: 0;
+    left: inherit;
+    z-index: 1;
+    width: 100%;
+}
+
+.u-color-primary {
+    color: $brand-primary;
+}

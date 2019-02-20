@@ -1,0 +1,20 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+	<div class="series-archive-header">
+		<div class="series-archive-header__wrapper">
+			<h1 class="series-archive-header__header">Livestream</h1>
+			<p class="series-archive-header__subheader">Join us live every Sunday from wherever you are.</p>
+		</div>
+	</div>
+
+	<section class="livestream-wrapper">
+		<div class="container">
+			<div id="boxcast-widget-xrodd3oq5mmc7bn6abux"></div>
+			<script type="text/javascript" charset="utf-8">(function(d, s, c, o) {var js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];var h = (('https:' == document.location.protocol) ? 'https:' : 'http:');js.src = h + '//js.boxcast.com/v3.min.js';js.onload = function() { boxcast.noConflict()('#boxcast-widget-'+c).loadChannel(c, o); };js.charset = 'utf-8';fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'xrodd3oq5mmc7bn6abux', {"showTitle":1,"showDescription":1,"showHighlights":1,"showRelated":true,"defaultVideo":"next","market":"house-of-worship","showCountdown":true}));
+			</script>
+		</div>
+	</section>
+
+{% endblock %}

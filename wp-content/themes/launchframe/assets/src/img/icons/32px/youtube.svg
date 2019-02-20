@@ -1,0 +1,24 @@
+<svg width="24px" height="17px" viewBox="0 0 24 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <path d="M27.8,11.6 C27.8,11.6 27.6,9.9 26.8,9.2 C25.9,8.2 24.9,8.2 24.4,8.2 C21,8 16,8 16,8 C16,8 11,8 7.6,8.2 C7.1,8.3 6.1,8.3 5.2,9.2 C4.5,9.9 4.2,11.6 4.2,11.6 C4.2,11.6 4,13.5 4,15.5 L4,17.3 C4,19.2 4.2,21.2 4.2,21.2 C4.2,21.2 4.4,22.9 5.2,23.6 C6.1,24.6 7.3,24.5 7.8,24.6 C9.7,24.8 16,24.8 16,24.8 C16,24.8 21,24.8 24.4,24.5 C24.9,24.4 25.9,24.4 26.8,23.5 C27.5,22.8 27.8,21.1 27.8,21.1 C27.8,21.1 28,19.2 28,17.2 L28,15.4 C28,13.5 27.8,11.6 27.8,11.6 Z M13.5,19.5 L13.5,12.8 L20,16.2 L13.5,19.5 Z" id="path-youtube"></path>
+    </defs>
+    <g id="↳-Logos-&amp;-Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="03.-Components-/-Footer-/-Desktop" transform="translate(-1247.000000, -66.000000)">
+            <g id="footer">
+                <g id="contactBar">
+                    <g id="socialIcons" transform="translate(1019.000000, 58.000000)">
+                        <g id="Icons-/-32px-/-Youtube" transform="translate(224.000000, 0.000000)">
+                            <mask id="mask-youtube" fill="white">
+                                <use xlink:href="#path-youtube"></use>
+                            </mask>
+                            <g id="Youtube" fill-rule="nonzero"></g>
+                            <g id="Branding-/-Colors-/-Neutral-80" mask="url(#mask-youtube)" fill="#273040" fill-rule="evenodd">
+                                <rect id="🎨-Color" x="0" y="0" width="32" height="32"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,42 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	{% set count_to_text = ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen", "Twenty"] %}
+
+	<div class="hero">
+		<div class="hero__slide hero__slide--series">
+            <div class="u-abs-full bg-img" style="background-image: url('{{ fn('imgix', post.get_field('series_artwork'), 1400) }}');"></div>
+            {% if post.get_field('sermons') %}
+				{% for sermon in post.get_field('sermons')|slice(0,1) %}
+            		<a class="hero-content__button hero-content__button--play video-modal-trigger" href="#!" data-vimeoid="{{ sermon.get_field('vimeo_id') }}">Play First Video</a>
+            	{% endfor %}
+			{% endif %}
+        </div>
+	</div>
+
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					{% if post.get_field('sermons') %}
+						{% for sermon in post.get_field('sermons') %}
+						    <a href="#!">
+						        <div class="single-message video-modal-trigger" data-vimeoid="{{ sermon.get_field('vimeo_id') }}">
+						            <div class="single-message__image" style="background-image: url({{ fn('imgix', post.get_field('series_artwork'), 600) }});">
+						            	<div class="btn-play"></div>
+						            </div>
+						            <div class="single-message__info">
+						            	<p class="single-message__supertitle">Week {{ count_to_text[loop.index0] }}</p>
+						                <h3 class="single-message__title">{{ sermon.title }}</h3>
+						                <p class="single-message__subtitle">{{ sermon.get_field('date') }}</p>
+						            </div>
+						        </div>
+						    </a>
+						{% endfor %}
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</section>
+
+{% endblock %}

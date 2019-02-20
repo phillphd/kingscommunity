@@ -1,0 +1,216 @@
+.clearfix {
+    *zoom: 1;
+}
+.clearfix::before,
+.clearfix::after {
+    display: table;
+    line-height: 0;
+    content: "";
+}
+.clearfix::after {
+    clear: both;
+}
+.lightboxgallery-modal-open {
+    overflow: hidden;
+}
+.lightboxgallery-modal-wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1033;
+    overflow: hidden;
+    text-align: center;
+    cursor: zoom-out;
+    background: rgba(0, 0, 0, .8);
+}
+.lightboxgallery-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 1034;
+    max-width: 100%;
+    max-height: 100%;
+    cursor: pointer;
+    background: #000;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+}
+.lightboxgallery-next,
+.lightboxgallery-prev {
+    position: fixed;
+    top: 0;
+    width: 40px;
+    height: 100%;
+    opacity: 0;
+    -webkit-transition: opacity 300ms;
+    transition: opacity 300ms;
+}
+.lightboxgallery-next {
+    right: 0;
+}
+.lightboxgallery-prev {
+    left: 0;
+}
+.lightboxgallery-modal-wrapper:hover .lightboxgallery-next,
+.lightboxgallery-modal-wrapper:hover .lightboxgallery-prev {
+    opacity: 1;
+}
+.lightboxgallery-next > span,
+.lightboxgallery-prev > span {
+    position: relative;
+    top: 50%;
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-top: 5px solid #FFF;
+}
+.lightboxgallery-next > span {
+    left: -3px;
+    border-right: 5px solid #FFF;
+    -webkit-transform: rotate(45deg) translateY(-50%);
+    transform: rotate(45deg) translateY(-50%);
+}
+.lightboxgallery-prev > span {
+    left: 22px;
+    border-left: 5px solid #FFF;
+    transform: rotate(-45deg) translateY(-50%);
+}
+.lightboxgallery-close.lightboxgallery-hidden,
+.lightboxgallery-hidden {
+    display: none;
+}
+.lightboxgallery-close,
+.lightboxgallery-close:hover,
+.lightboxgallery-close:active,
+.lightboxgallery-close:focus {
+    position: absolute;
+    top: -36px;
+    right: -10px;
+    display: block;
+    width: 36px;
+    height: 36px;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 36px;
+    color: rgba(255, 255, 255, .8);
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    -webkit-transition: color 300ms;
+    transition: color 300ms;
+}
+.lightboxgallery-close:hover {
+    color: #FFF;
+}
+.lightboxgallery-modal-close:hover,
+.lightboxgallery-modal-close:active,
+.lightboxgallery-modal-close:focus {
+    color: #2384D3;
+}
+.lightboxgallery-image-wrapper {
+    position: relative;
+}
+.lightboxgallery-image {
+    width: 100%;
+}
+.lightboxgallery-modal-body {
+    overflow: hidden;
+}
+.lightboxgallery-image-content {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    padding: 10px;
+    font-size: 14px;
+    line-height: 24px;
+    color: #FFF;
+    text-align: left;
+    background: rgba(0, 0, 0, .8);
+    -webkit-animation: fadeInUp 300ms;
+    animation: fadeInUp 300ms;
+}
+.lightboxgallery-image-title {
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+}
+.lightboxgallery-gallery-stat {
+    float: right;
+    font-size: 13px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, .5);
+}
+.lightboxgallery-gallery-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    margin-top: -12px;
+    margin-left: -12px;
+    border: .25rem solid rgba(255, 255, 255, .2);
+    border-top-color: #FFF;
+    border-radius: 50%;
+    -webkit-animation: spin 1s infinite linear;
+    animation: spin 1s infinite linear;
+}
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes pulse {
+    50% {
+        background: #FFF;
+    }
+}
+@keyframes pulse {
+    50% {
+        background: #FFF;
+    }
+}
+@-webkit-keyframes fadeInUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    };
+}

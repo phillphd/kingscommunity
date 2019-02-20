@@ -1,0 +1,24 @@
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <path d="M26,4 L6,4 C4.895,4 4,4.895 4,6 L4,26 C4,27.105 4.895,28 6,28 L17,28 L17,19 L14,19 L14,15 L17,15 L17,12.413 C17,9.313 18.893,7.625 21.659,7.625 C22.984,7.625 24.122,7.724 24.454,7.768 L24.454,11.008 L22.536,11.009 C21.032,11.009 20.741,11.724 20.741,12.772 L20.741,15 L25.181,15 L24.181,19 L20.741,19 L20.741,28 L26,28 C27.105,28 28,27.105 28,26 L28,6 C28,4.895 27.105,4 26,4 Z" id="path-facebook"></path>
+    </defs>
+    <g id="↳-Logos-&amp;-Colors" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="03.-Components-/-Footer-/-Desktop" transform="translate(-1135.000000, -62.000000)">
+            <g id="footer">
+                <g id="contactBar">
+                    <g id="socialIcons" transform="translate(1019.000000, 58.000000)">
+                        <g id="Icons-/-32px-/-Facebook" transform="translate(112.000000, 0.000000)">
+                            <mask id="mask-facebook" fill="white">
+                                <use xlink:href="#path-facebook"></use>
+                            </mask>
+                            <g id="Facebook" fill-rule="nonzero"></g>
+                            <g id="Branding-/-Colors-/-Neutral-80" mask="url(#mask-facebook)" fill="#273040" fill-rule="evenodd">
+                                <rect id="🎨-Color" x="0" y="0" width="32" height="32"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

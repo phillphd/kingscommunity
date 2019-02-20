@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="35px" viewBox="0 0 18 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>bracket-cross</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="👥-Gather" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.200000003">
+        <g id="Gather" transform="translate(-64.000000, -1241.000000)" fill="#B5B3B2">
+            <g id="bracket-cross" transform="translate(73.000000, 1258.500000) rotate(-90.000000) translate(-73.000000, -1258.500000) translate(56.000000, 1250.000000)">
+                <polygon id="Fill-1" points="0 7.40447402 0 9.59462002 8 15 8 12.1226872 2.50999131 8.54280637 2.50999131 8.45674065 8 4.8773128 8 2"></polygon>
+                <polygon id="Fill-2" points="15.247229 0 15.4306377 3.71352441 12 3.52827637 12 6.05864729 15.4306377 5.87475144 15.247229 17 17.7532184 17 17.5693623 5.87475144 21 6.05864729 21 3.52827637 17.5693623 3.71352441 17.7532184 0"></polygon>
+                <polygon id="Fill-3" points="26 4.8773128 31.4895743 8.45674065 31.4895743 8.54280637 26 12.1226872 26 15 34 9.59462002 34 7.40447402 26 2"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
