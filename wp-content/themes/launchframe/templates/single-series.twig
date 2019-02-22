@@ -8,7 +8,7 @@
             <div class="u-abs-full bg-img" style="background-image: url('{{ fn('imgix', post.get_field('series_artwork'), 1400) }}');"></div>
             {% if post.get_field('sermons') %}
 				{% for sermon in post.get_field('sermons')|slice(0,1) %}
-            		<a class="hero-content__button hero-content__button--play video-modal-trigger" href="#!" data-vimeoid="{{ sermon.get_field('vimeo_id') }}">Play First Video</a>
+            		<a class="hero-content__button hero-content__button--play" href="{{ sermon.get_field('vimeo_id') }}" target="_blank">Play First Sermon</a>
             	{% endfor %}
 			{% endif %}
         </div>
@@ -21,15 +21,17 @@
 					{% if post.get_field('sermons') %}
 						{% for sermon in post.get_field('sermons') %}
 						    <a href="#!">
-						        <div class="single-message video-modal-trigger" data-vimeoid="{{ sermon.get_field('vimeo_id') }}">
-						            <div class="single-message__image" style="background-image: url({{ fn('imgix', post.get_field('series_artwork'), 600) }});">
-						            	<div class="btn-play"></div>
-						            </div>
-						            <div class="single-message__info">
-						            	<p class="single-message__supertitle">Week {{ count_to_text[loop.index0] }}</p>
-						                <h3 class="single-message__title">{{ sermon.title }}</h3>
-						                <p class="single-message__subtitle">{{ sermon.get_field('date') }}</p>
-						            </div>
+						        <div class="single-message">
+						        	<a href="{{ sermon.get_field('vimeo_id') }}" target="_blank">
+							            <div class="single-message__image" style="background-image: url({{ fn('imgix', post.get_field('series_artwork'), 600) }});">
+							            	<div class="btn-play"></div>
+							            </div>
+							            <div class="single-message__info">
+							            	<p class="single-message__supertitle">Week {{ count_to_text[loop.index0] }}</p>
+							                <h3 class="single-message__title">{{ sermon.title }}</h3>
+							                <p class="single-message__subtitle">{{ sermon.get_field('date') }}</p>
+							            </div>
+							        </a>
 						        </div>
 						    </a>
 						{% endfor %}

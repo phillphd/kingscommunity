@@ -132,8 +132,7 @@ class LaunchframeSite extends TimberSite {
 	    	array(
 	      		'primary-nav' => __( 'Primary Navigation' ),
 	      		'footer-nav-1' => __( 'Footer Navigation 1' ),
-	      		'footer-nav-2' => __( 'Footer Navigation 2' ),
-	      		'footer-nav-3' => __( 'Footer Navigation 3' )
+	      		'footer-nav-2' => __( 'Footer Navigation 2' )
 	    	)
 	  	);
 	}
@@ -142,7 +141,6 @@ class LaunchframeSite extends TimberSite {
 		$context['primaryNav'] = new TimberMenu('primary-nav');
 		$context['footerNav1'] = new TimberMenu('footer-nav-1');
 		$context['footerNav2'] = new TimberMenu('footer-nav-2');
-		$context['footerNav3'] = new TimberMenu('footer-nav-3');
 		$context['site'] = $this;
 		return $context;
 	}

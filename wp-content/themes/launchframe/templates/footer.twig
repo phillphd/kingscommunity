@@ -15,13 +15,7 @@
 						<p class="connect__body">{{ options.church_mailing_address }}</p>
 					{% endif %}
 				</div>
-				<ul class="connect__social">
-					<li><a href="mailto:office@therocc.com">{% include 'assets/src/img/icons/32px/email.svg' %}</a></li>
-					<li><a href="https://www.instagram.com/rocctheboro/">{% include 'assets/src/img/icons/32px/instagram.svg' %}</a></li>
-					<li><a href="https://www.facebook.com/ROCCTheBoro/">{% include 'assets/src/img/icons/32px/facebook.svg' %}</a></li>
-					<li><a href="https://twitter.com/rocctheboro">{% include 'assets/src/img/icons/32px/twitter.svg' %}</a></li>
-					<li><a href="https://www.youtube.com/channel/UCXECb8jryEe4zbBZapyZJOA">{% include 'assets/src/img/icons/32px/youtube.svg' %}</a></li>
-				</ul>
+				<a href="#!" class="btn btn-footer connect__social">Sign-up for our newsletter</a>
 			</div>
 		</div>
 	</div>
@@ -49,15 +43,11 @@
 							</ul>
 						{% endif %}
 					</div>
-					<div class="footer-menu footer-menu--wrap">
-						{% if footerNav3.get_items %}
-							<h5 class="footer-menu__title"><strong>{{footerNav3.title}}</strong></h5>
-							<ul class="footer-menu__list">
-								{% for item in footerNav3.get_items %}
-									<li class="{{item.classes | join(' ')}}"><a href="{{item.get_link}}">{{item.title}}</a></li>
-								{% endfor %}
-							</ul>
-						{% endif %}
+					<div class="footer-menu footer-menu--wrap footer-menu--pillars">
+						<h5 class="footer-menu__title"><strong>Lives <span>Redeemed</span>.</strong></h5>
+						<h5 class="footer-menu__title"><strong>Communities <span>Blessed</span>.</strong></h5>
+						<h5 class="footer-menu__title"><strong>Families <span>Transformed</span>.</strong></h5>
+						<h5 class="footer-menu__title"><strong>More Churches <span>Planted</span>.</strong></h5>
 					</div>
 				</div>
 			</div>

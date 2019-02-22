@@ -18,6 +18,17 @@ footer {
         width: 24%;
         margin: 0 15px;
     }
+    &--pillars {
+        h5 {
+            color: $gray-lighter;
+            &:last-child {
+                margin-bottom: 0;
+            }
+            span {
+                color: $brand-primary;
+            }
+        }
+    }
     &--wrap {
         width: 100%;
         @include media-breakpoint-up(md) {
@@ -72,28 +83,11 @@ footer {
         color: $white;
     }
     &__social {
-        padding: 0;
-        margin: 24px auto 0;
         @include media-breakpoint-up(md) {
             position: absolute;
             top: 50%;
             right: 0;
-            margin: 0;
             transform: translateY(-50%);
-        }
-        li {
-            display: inline;
-            margin: 0 12px;
-            @include media-breakpoint-up(md) {
-                margin-right: 0;
-                margin-left: 18px;
-            }
-            @include media-breakpoint-up(lg) {
-                margin-left: 24px;
-            }
-        }
-        svg {
-            width: 32px;
         }
     }
 }
