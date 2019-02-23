@@ -48,7 +48,6 @@ class LaunchframeSite extends TimberSite {
 		global $package_version;
 		wp_enqueue_script( 'jquery-js', 'https://code.jquery.com/jquery-3.3.1.min.js', array(), $package_version, true );
 		wp_enqueue_script( 'slick-js', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', array('jquery-js'), $package_version, true );
-		// wp_enqueue_script( 'map-js', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCj9GPxSVlN4Tz8VM69DXT2f9t4faXxO-s', array('jquery'), $package_version, true );
 		wp_enqueue_script( 'lightbox-js', get_template_directory_uri() . '/inc/lightbox.js', array('jquery-js'), $package_version, true );
 		wp_enqueue_script( 'application-js', get_template_directory_uri() . '/assets/dist/js/script.min.js', array('jquery-js', 'lightbox-js', 'slick-js'), $package_version, true );
 	}
@@ -146,61 +145,6 @@ class LaunchframeSite extends TimberSite {
 	}
 }
 
-function bible_plan(){
-    $bible_plan = "<div class=\"bible-content\">
-    <link rel=\"stylesheet\" href=\"http://therocc.com/wp-content/uploads/assets/oneyearbible/styles.css\" type=\"text/css\" media=\"all\">
-    <h1>One Year Bible</h1>";
-
-    $bibleReadingPlan = simplexml_load_file("http://therocc.com/wp-content/uploads/assets/oneyearbible/bible.xml");
-	
-    foreach ($bibleReadingPlan->month as $month) {
-    	$bible_plan .= "<div id=\"" . $month["ofYear"] . "\" class=\"three-quarters\" style=\"display: none;\">";
-    	$bible_plan .= "<h3>" . $month["ofYear"] . "</h3>";
-    	$bible_plan .= "<table width=\"460\">";
-    	$bible_plan .= "<tbody>";
-    	foreach ($month->day as $day) {
-    		$bible_plan .= "<tr>";
-    		$bible_plan .= "<td class=\"date\">" . $day["ofMonth"] . "</td>";
-    		$bible_plan .= "<td>";
-    		foreach ($day->reference as $reference) {
-    			$bible_plan .= $reference . "<br />";
-    		}
-    		$bible_plan .= "</td>";
-    		$bible_plan .= "</tr>";
-    	}
-    	$bible_plan .= "</tbody>";
-    	$bible_plan .= "</table>";
-    	$bible_plan .= "</div>";
-    }
-    $bible_plan .=
-   		"<div id=\"sub-nav\" class=\"one-quarter\">
-		    <ul>
-		        <li><a href=\"#!\" onclick=\"showPlan('January')\">January</a></li>
-		        <li><a href=\"#!\" onclick=\"showPlan('February')\">February</a></li>
-		        <li><a href=\"#!\" onclick=\"showPlan('March')\">March</a></li>
-		        <li><a href=\"#!\" onclick=\"showPlan('April')\">April</a></li>
-		        <li><a href=\"#!\" onclick=\"showPlan('May')\">May</a></li>
-		        <li><a href=\"#!\" onclick=\"showPlan('June')\">June</a></li>
-		        <li><a href=\"#!\" onclick=\"showPlan('July')\">July</a></li>
-		        <li><a href=\"#!\" onclick=\"showPlan('August')\">August</a></li>
-		        <li><a href=\"#!\" onclick=\"showPlan('September')\">September</a></li>
-		        <li><a href=\"#!\" onclick=\"showPlan('October')\">October</a></li>
-		        <li><a href=\"#!\" onclick=\"showPlan('November')\">November</a></li>
-		        <li><a href=\"#!\" onclick=\"showPlan('December')\">December</a></li>
-		    </ul>
-		</div>
-		<script>
-			function showPlan(month) {
-			    jQuery('.three-quarters').hide();
-	            jQuery('#' + month).show();
-	        };
-		</script>
-		</div>";
-    
-    return $bible_plan;
-} 
-add_shortcode('bible_plan', 'bible_plan');
-
 if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page();	
 }
@@ -217,7 +161,7 @@ add_filter('timber_context', 'mytheme_timber_context');
 
 function imgix($image_url, $width = '') {
 	// $imgix_domain = 'https://therocc.imgix.net';
-	$imgix_domain = 'http://kingscc.wpengine.com/';
+	$imgix_domain = '//kingscommunity.ch';
 	$the_url = parse_url($image_url, 5);
 	$the_params = '?auto=compress,format&w=' . $width;
     return $imgix_domain . $the_url . $the_params;
