@@ -152,6 +152,11 @@ header {
         height: 300px;
         margin-bottom: 370px;
     }
+    .minimal-hero & {
+        height: auto;
+        padding: 20px 0 1px;
+        margin-bottom: 70px;
+    }
     &--sermon {
         height: 0;
         padding: 0;
@@ -195,6 +200,11 @@ header {
         @include media-breakpoint-up(lg) {
             height: 600px;
         }
+        .minimal-hero & {
+            position: relative;
+            left: 0;
+            transform: translate(0, 0) !important;
+        }
         &::after {
             position: absolute;
             top: 0;
@@ -204,12 +214,21 @@ header {
             height: 100%;
             background-color: fade-out($dark, .6);
             content: "";
+            .minimal-hero & {
+                background: transparent;
+            }
         }
         &--series {
             max-width: 948px;
             .bg-img::after {
                 background-color: transparent !important;
             }
+        }
+        .minimal-hero & {
+            height: auto;
+            margin-bottom: 40px;
+            box-shadow: none;
+            transform: translate(-50%, 0%);
         }
         video {
             @extend %bg-img;
@@ -241,6 +260,11 @@ header {
         color: $light;
         text-align: center;
         transform: translate(-50%, -50%);
+        .minimal-hero & {
+            position: relative;
+            left: 0;
+            transform: translate(0, 0);
+        }
     }
     &__sermon-meta {
         text-align: left;

@@ -66,10 +66,14 @@
         position: relative;
         display: inline-block;
         padding: 12px 56px 12px 20px;
+        margin-left: 15px;
         color: $dark;
         background-color: $white;
         border: 0;
         transition: .25s;
+        @include media-breakpoint-up(lg) {
+            margin-left: 0;
+        }
         &::after {
             position: absolute;
             top: 50%;

@@ -105,6 +105,10 @@ footer {
 }
 .base {
     position: relative;
+    text-align: center;
+    @include media-breakpoint-up(md) {
+        text-align: left;
+    }
     &__copy {
         margin-top: 16px;
         font-size: 14px;
@@ -130,6 +134,12 @@ footer {
         transform: translate(-50%, -50%);
         @include media-breakpoint-up(lg) {
             display: block;
+        }
+    }
+    img {
+        transform: scale(.5);
+        @include media-breakpoint-up(md) {
+            transform-origin: left center;
         }
     }
 }

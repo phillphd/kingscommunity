@@ -15,7 +15,7 @@
 						<p class="connect__body">{{ options.church_mailing_address }}</p>
 					{% endif %}
 				</div>
-				<a href="#!" class="btn btn-footer connect__social">Sign-up for our newsletter</a>
+				<a href="http://eepurl.com/dFoApf" target="_blank" class="btn btn-footer connect__social">Sign-up for the newsletter</a>
 			</div>
 		</div>
 	</div>
@@ -23,7 +23,7 @@
 		<div class="row">
 			<div class="col-xs-12" style="overflow: hidden;">
 				<div class="footer-menu-wrapper">
-					<div class="footer-menu">
+					<div class="footer-menu footer-menu--wrap">
 						{% if footerNav1.get_items %}
 							<h5 class="footer-menu__title"><strong>{{footerNav1.title}}</strong></h5>
 							<ul class="footer-menu__list">
@@ -43,10 +43,10 @@
 							</ul>
 						{% endif %}
 					</div>
-					<div class="footer-menu footer-menu--wrap footer-menu--pillars">
+					<div class="footer-menu footer-menu--pillars">
 						<h5 class="footer-menu__title"><strong>Lives <span>Redeemed</span>.</strong></h5>
-						<h5 class="footer-menu__title"><strong>Communities <span>Blessed</span>.</strong></h5>
 						<h5 class="footer-menu__title"><strong>Families <span>Transformed</span>.</strong></h5>
+						<h5 class="footer-menu__title"><strong>Communities <span>Blessed</span>.</strong></h5>
 						<h5 class="footer-menu__title"><strong>More Churches <span>Planted</span>.</strong></h5>
 					</div>
 				</div>
@@ -59,7 +59,7 @@
 				<div class="col-xs-12">
 					<div class="base">
 						<div class="base__mark">
-							<img src="{{ theme.link }}/assets/src/img/mark_footer.png'" style="transform: scale(.5);" />
+							<img src="{{ theme.link }}/assets/src/img/mark_footer.png'" />
 						</div>
 						<div class="base__copy">
 							&copy; {{"now"|date('Y')}} King's Community Church. All Rights Reserved.

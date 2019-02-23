@@ -5833,6 +5833,7 @@ blockquote::after {
   position: relative;
   display: inline-block;
   padding: 12px 56px 12px 20px;
+  margin-left: 15px;
   color: #414A5A;
   background-color: #FFF;
   border: 0;
@@ -5987,6 +5988,12 @@ header {
   background-color: #000000;
 }
 
+.minimal-hero .hero {
+  height: auto;
+  padding: 20px 0 1px;
+  margin-bottom: 70px;
+}
+
 .hero--sermon {
   height: 0;
   padding: 0;
@@ -6023,6 +6030,12 @@ header {
   box-shadow: 0 14px 18px -7px rgba(34, 34, 34, 0.2);
 }
 
+.minimal-hero .hero__slide {
+  position: relative;
+  left: 0;
+  transform: translate(0, 0) !important;
+}
+
 .hero__slide::after {
   position: absolute;
   top: 0;
@@ -6034,12 +6047,23 @@ header {
   content: "";
 }
 
+.minimal-hero .hero__slide::after {
+  background: transparent;
+}
+
 .hero__slide--series {
   max-width: 948px;
 }
 
 .hero__slide--series .bg-img::after {
   background-color: transparent !important;
+}
+
+.minimal-hero .hero__slide {
+  height: auto;
+  margin-bottom: 40px;
+  box-shadow: none;
+  transform: translate(-50%, 0%);
 }
 
 .hero__slide video {
@@ -6068,6 +6092,12 @@ header {
   color: #FFF;
   text-align: center;
   transform: translate(-50%, -50%);
+}
+
+.minimal-hero .hero__content {
+  position: relative;
+  left: 0;
+  transform: translate(0, 0);
 }
 
 .hero__sermon-meta {
@@ -6308,6 +6338,7 @@ footer {
 
 .base {
   position: relative;
+  text-align: center;
 }
 
 .base__copy {
@@ -6327,6 +6358,10 @@ footer {
   display: none;
   height: 40px;
   transform: translate(-50%, -50%);
+}
+
+.base img {
+  transform: scale(0.5);
 }
 
 .clearfix {
@@ -8448,6 +8483,10 @@ aside {
     transform: translateY(-50%);
   }
 
+  .base {
+    text-align: left;
+  }
+
   .base__copy {
     position: absolute;
     top: 50%;
@@ -8455,6 +8494,10 @@ aside {
     margin-top: 0;
     font-size: 15px;
     transform: translateY(-50%);
+  }
+
+  .base img {
+    transform-origin: left center;
   }
 
   .single-message__image {
@@ -9100,6 +9143,10 @@ aside {
   h1 {
     font-size: 56px;
     line-height: 72px;
+  }
+
+  .btn-footer {
+    margin-left: 0;
   }
 
   header {
