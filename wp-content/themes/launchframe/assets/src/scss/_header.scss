@@ -11,9 +11,11 @@ header {
 }
 
 .logo-primary {
-    width: 180px;
+    transform: scale(.5);
+    transform-origin: left center;
     @include media-breakpoint-up(lg) {
-        width: 262px;
+        transform: scale(.65);
+        transform-origin: center;
     }
 }
 .main-nav {
@@ -308,6 +310,7 @@ header {
         bottom: 40px;
         left: 50%;
         z-index: 9;
+        white-space: nowrap;
         transform: translateX(-50%);
         @include media-breakpoint-up(lg) {
             bottom: 64px;

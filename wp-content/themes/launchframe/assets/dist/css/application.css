@@ -5877,7 +5877,8 @@ header {
 }
 
 .logo-primary {
-  width: 180px;
+  transform: scale(0.5);
+  transform-origin: left center;
 }
 
 .main-nav {
@@ -6142,6 +6143,7 @@ header {
   bottom: 40px;
   left: 50%;
   z-index: 9;
+  white-space: nowrap;
   transform: translateX(-50%);
 }
 
@@ -9078,7 +9080,8 @@ aside {
   }
 
   .logo-primary {
-    width: 262px;
+    transform: scale(0.65);
+    transform-origin: center;
   }
 
   .main-nav {
