@@ -6146,6 +6146,10 @@ header {
   height: 365px;
 }
 
+.minimal-hero .hero-content__title {
+  margin-bottom: 40px;
+}
+
 .hero-content__subtitle {
   margin-bottom: 0;
 }

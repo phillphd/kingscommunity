@@ -308,7 +308,9 @@ header {
 
 .hero-content {
     &__title {
-
+        .minimal-hero & {
+            margin-bottom: 40px;
+        }
     }
     &__subtitle {
         margin-bottom: 0;
