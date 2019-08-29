@@ -758,6 +758,52 @@
     }
 }
 
+// Bullet Points
+
+.bullet_points {
+    position: relative;
+    padding: 20px 0;
+    &__line {
+        position: absolute;
+        top: 0;
+        left: -28px;
+        width: 1px;
+        height: 100%;
+        border-left: 1px dashed $brand-primary;
+    }
+}
+.bullet_point {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    li {
+        position: relative;
+        margin: 10px 0 40px !important;
+        &::after {
+            position: absolute;
+            top: 16px;
+            left: -32px;
+            width: 9px;
+            height: 9px;
+            background-color: $brand-primary;
+            border-radius: 8px;
+            content: "";
+        }
+    }
+    .btn {
+        padding: 8px 36px;
+        color: $brand-primary;
+        background-color: transparent;
+        border: 1px solid $brand-primary;
+        border-radius: 12px;
+        box-shadow: none;
+        transition: .25s;
+        &:hover {
+            color: $white;
+            background-color: $brand-primary;
+        }
+    }
+}
 
 // Livestream
 

@@ -7272,6 +7272,57 @@ footer {
   margin: 0 6px;
 }
 
+.bullet_points {
+  position: relative;
+  padding: 20px 0;
+}
+
+.bullet_points__line {
+  position: absolute;
+  top: 0;
+  left: -28px;
+  width: 1px;
+  height: 100%;
+  border-left: 1px dashed #b19a72;
+}
+
+.bullet_point {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.bullet_point li {
+  position: relative;
+  margin: 10px 0 40px !important;
+}
+
+.bullet_point li::after {
+  position: absolute;
+  top: 16px;
+  left: -32px;
+  width: 9px;
+  height: 9px;
+  background-color: #b19a72;
+  border-radius: 8px;
+  content: "";
+}
+
+.bullet_point .btn {
+  padding: 8px 36px;
+  color: #b19a72;
+  background-color: transparent;
+  border: 1px solid #b19a72;
+  border-radius: 12px;
+  box-shadow: none;
+  transition: .25s;
+}
+
+.bullet_point .btn:hover {
+  color: #FFF;
+  background-color: #b19a72;
+}
+
 .livestream-wrapper {
   padding-bottom: 70px;
   margin-bottom: -70px;
