@@ -2,18 +2,19 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	
 	{% if post.get_field('hero')|length > 1 %}
 		<div class="hero big-slick">
 			{% include 'hero-home.twig' %}
+			<div class="round-edge"></div>
 		</div>
 	{% else %}
 		<div class="hero">
 			{% include 'hero-page.twig' %}
+			<div class="round-edge"></div>
 		</div>
 	{% endif %}
 
-	<section>
+	<section style="position: relative;">
 		<div class="container">
 			{% include '_partial-flex-fields.twig' %}
 		</div>

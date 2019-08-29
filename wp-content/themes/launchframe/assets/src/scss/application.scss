@@ -434,6 +434,50 @@
     }
 }
 
+.candy {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -9;
+    width: 100%;
+    height: 100%;
+    background-color: #FFF;
+    // overflow: hidden;
+    // $dark
+    // $yellow
+    // $pink
+    // $blue
+    // $green
+    span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        font-family: 'Work Sans', sans-serif;
+        font-size: 3000px;
+        font-weight: 400;
+        line-height: 1;
+        color: transparent;
+        text-transform: uppercase;
+        transform: translate(-50%, -50%);
+        &:nth-child(1) {
+            color: $yellow;
+            transform: translate(-53%, -50%);
+            mix-blend-mode: multiply;
+        }
+        &:nth-child(2) {
+            color: $light-blue;
+            transform: translate(-56%, -50%);
+            mix-blend-mode: multiply;
+        }
+        &:nth-child(3) {
+            color: $pink;
+            transform: translate(-47%, -50%);
+            mix-blend-mode: multiply;
+        }
+    }
+}
+
 .lightboxgallery-gallery {
     display: block;
     margin: 60px -10px;
@@ -689,6 +733,31 @@
     }
 }
 
+// Connect CTA
+
+.cta-connect {
+    position: relative;
+    display: inline-block;
+    padding: 12px 24px;
+    margin-top: 40px;
+    border: 1px solid $gray-light;
+    border-radius: 12px;
+    &__title {
+        margin-bottom: 0;
+        color: $blue;
+    }
+    a {
+        color: $blue;
+        transition: color .25s;
+        &:hover {
+            color: $brand-primary;
+        }
+    }
+    i {
+        margin: 0 6px;
+    }
+}
+
 
 // Livestream
 
@@ -748,5 +817,3 @@
 aside {
     display: none !important;
 }
-
-

@@ -41,11 +41,12 @@ class LaunchframeSite extends TimberSite {
 		wp_enqueue_style( 'slick-style', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', true, $package_version );
 		wp_enqueue_style( 'application-style', get_template_directory_uri() . '/assets/dist/css/application.min.css', true, $package_version );
 		wp_enqueue_style( 'nunito-style', 'https://fonts.googleapis.com/css?family=Nunito:400,400i,600,600i,700,700i', true, $package_version );
-		wp_enqueue_style( 'work-sans-style', 'https://fonts.googleapis.com/css?family=Work+Sans:800', true, $package_version );
+		wp_enqueue_style( 'work-sans-style', 'https://fonts.googleapis.com/css?family=Work+Sans:400,800', true, $package_version );
 	}
 
 	function register_scripts() {
 		global $package_version;
+		wp_enqueue_script( 'fa-js', 'https://kit.fontawesome.com/6818f8c5c7.js', array(), $package_version, true );
 		wp_enqueue_script( 'jquery-js', 'https://code.jquery.com/jquery-3.3.1.min.js', array(), $package_version, true );
 		wp_enqueue_script( 'slick-js', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', array('jquery-js'), $package_version, true );
 		wp_enqueue_script( 'lightbox-js', get_template_directory_uri() . '/inc/lightbox.js', array('jquery-js'), $package_version, true );

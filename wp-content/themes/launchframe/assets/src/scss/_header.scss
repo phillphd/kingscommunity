@@ -2,11 +2,11 @@ header {
     position: relative;
     width: 100%;
     height: auto;
+    min-height: 100px;
     padding: 0 20px;
     background-color: $blue-dark;
     @include media-breakpoint-up(lg) {
         padding: 44px 20px 36px;
-        text-align: center;
     }
 }
 
@@ -27,9 +27,13 @@ header {
     background-color: $blue-dark;
     transition: .3s;
     @include media-breakpoint-up(lg) {
-        display: block;
+        position: absolute;
+        top: 50%;
+        right: 60px;
+        display: inline-block;
         max-height: 100px;
         padding: 10px 0;
+        transform: translateY(-50%);
     }
     .open-nav & {
         max-height: 1000px;
@@ -38,13 +42,17 @@ header {
     li {
         display: block;
         padding: 20px 10px 40px;
-        font-size: 15px;
         opacity: 0;
         transition: .3s;
         @include media-breakpoint-up(lg) {
             display: inline;
             padding: 0 10px;
             opacity: 1;
+        }
+        &:last-child a {
+            @extend %btn;
+            display: inline-block;
+            padding: 10px 20px;
         }
         .open-nav & {
             opacity: 1;
@@ -187,6 +195,7 @@ header {
         position: absolute;
         bottom: 0;
         left: 50%;
+        z-index: 99;
         width: calc(100% - 32px);
         height: 400px;
         max-width: 1140px;
@@ -257,7 +266,7 @@ header {
         left: 50%;
         z-index: 9;
         width: 100%;
-        max-width: 650px;
+        max-width: 850px;
         margin: 0 auto;
         color: $light;
         text-align: center;
@@ -417,6 +426,31 @@ header {
         opacity: 0;
         &:hover {
             cursor: pointer;
+        }
+    }
+}
+
+.round-edge {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 9;
+    width: 100%;
+    overflow: hidden;
+    &::after {
+        position: relative;
+        display: block;
+        width: calc(100% + 76px);
+        padding-bottom: 2.77%;
+        margin-left: -38px;
+        width: calc(100% + 76px);
+        background-image: url("../../src/img/round-edge.svg");
+        background-size: cover;
+        content: "";
+    }
+    &--secondary {
+        &::after {
+            background-image: url("../../src/img/round-edge--secondary.svg");
         }
     }
 }
