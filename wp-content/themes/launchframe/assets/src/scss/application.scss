@@ -689,6 +689,7 @@
     padding: 24px 32px;
     background-color: $white;
     border-radius: 10px;
+    border: 1px solid $brand-primary;
     transform: translateY(-50%);
     box-shadow: 0 10px 8px -5px fade-out(#273040, .8);
     @include media-breakpoint-up(md) {
