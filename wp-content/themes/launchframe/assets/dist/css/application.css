@@ -5750,6 +5750,32 @@ blockquote::after {
   max-width: 100%;
 }
 
+.site-main .p-rich_text_list__bullet {
+  display: block;
+  list-style-type: disc;
+  -webkit-margin-before: 1em;
+  margin-block-start: 1em;
+  -webkit-margin-after: 1em;
+  margin-block-end: 1em;
+  -webkit-margin-start: 0px;
+  -moz-margin-start: 0px;
+  margin-inline-start: 0px;
+  -webkit-margin-end: 0px;
+  -moz-margin-end: 0px;
+  margin-inline-end: 0px;
+  -webkit-padding-start: 40px;
+  -moz-padding-start: 40px;
+  padding-inline-start: 40px;
+}
+
+.site-main .p-rich_text_list__bullet li {
+  margin-bottom: 8px;
+}
+
+.site-main .p-rich_text_section {
+  margin-bottom: 8px;
+}
+
 .btn,
 .main-nav li:last-child a,
 .hero-content__button {

@@ -10,4 +10,19 @@
         height: auto;
         max-width: 100%;
     }
+    .p-rich_text_list__bullet {
+        display: block;
+        list-style-type: disc;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        padding-inline-start: 40px;
+        li {
+            margin-bottom: 8px;
+        }
+    }
+    .p-rich_text_section {
+        margin-bottom: 8px;
+    }
 }
