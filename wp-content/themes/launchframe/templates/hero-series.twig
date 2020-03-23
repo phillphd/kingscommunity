@@ -8,7 +8,13 @@
                 <h1 class="hero-content__title">{{ post.title }}</h1>
                 <p class="hero-content__subtitle">{{ hero.subtitle }}</p>
             </div>
-            <a class="hero-content__button" href="{{ post.link }}">{{ hero.button_text }}</a>
+            {% if hero.button_text %}
+                <div class="hero-content__button-wrapper">
+                    {% if hero.button_text %}
+                        <a class="hero-content__button" href="{{ post.link }}">{{ hero.button_text }}</a>
+                    {% endif %}
+                </div>
+            {% endif %}
         </div>
     {% endfor %}
 {% endif %}

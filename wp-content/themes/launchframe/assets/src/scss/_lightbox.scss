@@ -66,17 +66,17 @@
     display: block;
     width: 16px;
     height: 16px;
-    border-top: 5px solid #FFF;
+    border-top: 5px solid $white;
 }
 .lightboxgallery-next > span {
     left: -3px;
-    border-right: 5px solid #FFF;
+    border-right: 5px solid $white;
     -webkit-transform: rotate(45deg) translateY(-50%);
     transform: rotate(45deg) translateY(-50%);
 }
 .lightboxgallery-prev > span {
     left: 22px;
-    border-left: 5px solid #FFF;
+    border-left: 5px solid $white;
     transform: rotate(-45deg) translateY(-50%);
 }
 .lightboxgallery-close.lightboxgallery-hidden,
@@ -104,7 +104,7 @@
     transition: color 300ms;
 }
 .lightboxgallery-close:hover {
-    color: #FFF;
+    color: $white;
 }
 .lightboxgallery-modal-close:hover,
 .lightboxgallery-modal-close:active,
@@ -129,7 +129,7 @@
     padding: 10px;
     font-size: 14px;
     line-height: 24px;
-    color: #FFF;
+    color: $white;
     text-align: left;
     background: rgba(0, 0, 0, .8);
     -webkit-animation: fadeInUp 300ms;
@@ -155,7 +155,7 @@
     margin-top: -12px;
     margin-left: -12px;
     border: .25rem solid rgba(255, 255, 255, .2);
-    border-top-color: #FFF;
+    border-top-color: $white;
     border-radius: 50%;
     -webkit-animation: spin 1s infinite linear;
     animation: spin 1s infinite linear;
@@ -182,12 +182,12 @@
 }
 @-webkit-keyframes pulse {
     50% {
-        background: #FFF;
+        background: $white;
     }
 }
 @keyframes pulse {
     50% {
-        background: #FFF;
+        background: $white;
     }
 }
 @-webkit-keyframes fadeInUp {

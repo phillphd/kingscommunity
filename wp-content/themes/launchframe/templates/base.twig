@@ -25,7 +25,12 @@
 		{% endif %}
 		
 		<header>
-			<a href="/"><img class="logo-primary" src="{{ theme.link }}/assets/src/img/mark_logo.png'" /></a>
+			<a href="/">
+				<div class="logo-primary">
+					{% set logo = 'logo.svg' %}
+					{{ source(logo) }}
+				</div>
+			</a>
 			{% include 'nav.twig' %}
 		</header>
 
@@ -44,17 +49,7 @@
 				</div>
 			</div>
 
-			<div class="map">
-				<div class="map-card">
-					<div class="map-card__title">Join Us</div>
-					<div class="map-card__subtitle">Sundays at 10:00am</div>
-					<div class="map-card__text">
-						{{ options.church_address }}
-					</div>
-					<a href="https://goo.gl/maps/7FirbH3vp2hxreiKA" class="map-card__button btn btn-secondary">Get Directions</a>
-				</div>
-				<div id="map" class="u-abs-full bg-img bg-map" data-lattitude="29.718980" data-longitude="-98.152760"></div>
-			</div>
+			{% include '_partial-map-box.twig' %}
 		</main>
 
 		{% block footer %}

@@ -9,6 +9,10 @@
 @import "footer";
 @import "lightbox";
 
+html {
+    background-color: $white;
+}
+
 .btn-play,
 %btn-play {
     position: absolute;
@@ -269,7 +273,7 @@
             padding-top: 10px;
             font-family: $font-family-sans-serif;
             font-weight: 700;
-            color: #FFF;
+            color: $white;
             content: "";
         }
         &:hover {
@@ -441,13 +445,7 @@
     z-index: -9;
     width: 100%;
     height: 100%;
-    background-color: #FFF;
-    // overflow: hidden;
-    // $dark
-    // $yellow
-    // $pink
-    // $blue
-    // $green
+    background-color: $white;
     span {
         position: absolute;
         top: 50%;
@@ -674,9 +672,36 @@
     height: 500px;
     margin: 100px 0 -70px;
     background-color: $blue-dark;
-    background-image: url("../../src/img/map.jpg");
     @include media-breakpoint-up(md) {
         height: 600px;
+    }
+    &__image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("../../src/img/gabe-yt.png");
+        background-size: cover;
+        background-position: center;
+        &::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, $cream 0%, rgba(255,255,255,0) 100%);
+            content: "";
+        }
+    }
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $ink;
+        mix-blend-mode: color;
     }
 }
 
@@ -706,19 +731,6 @@
         position: relative;
         padding-left: 44px;
         margin-bottom: 8px;
-        &::after {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            width: 28px;
-            height: 30px;
-            background-image: url("../../src/img/position-marker.jpg");
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: contain;
-            content: "";
-            transform: translateY(-50%);
-        }
     }
     &__subtitle {
         @extend %subheader;
@@ -730,6 +742,73 @@
     }
     &__button {
         margin-bottom: 0;
+    }
+    &__marker {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 30px;
+        height: 30px;
+        transform: translateY(-50%);
+    }
+}
+
+// CTA
+
+.cta {
+    padding: 2.5rem;
+    margin-bottom: 5rem;
+    background-color: $ink;
+    border-radius: 12px;
+    box-shadow: 0 14px 18px -7px rgba(39, 48, 64, .2);
+    @include media-breakpoint-up(md) {
+        display: flex;
+        align-items: center;
+    }
+    @include media-breakpoint-up(lg) {
+        padding: 4rem;
+    }
+    @include media-breakpoint-up(xl) {
+        padding: 4rem 6rem;
+    }
+    &__content {
+        margin-right: auto;
+        color: $white;
+    }
+    &__title {
+        margin-bottom: .25rem;
+        font-family: 'Work Sans', sans-serif;
+        font-weight: 700;
+        color: $saffron;
+    }
+    &__text {
+        margin-bottom: 0;
+        max-width: 400px;
+        @include media-breakpoint-up(lg) {
+            max-width: 500px;
+        }
+    }
+    &__button {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        text-align: center;
+        @include media-breakpoint-up(md) {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+    a {
+        @extend %btn-secondary;
+        font-weight: 700;
+        color: $ink;
+        background-color: $saffron;
+        border-radius: 4px;
+        box-shadow: 0 16px 16px -10px rgba(39, 48, 64, .2);
+        opacity: 1;
+        &:hover {
+            color: $ink;
+            background-color: darken($saffron, 10%);
+        }
     }
 }
 
@@ -810,7 +889,7 @@
 .livestream-wrapper {
     padding-bottom: 70px;
     margin-bottom: -70px;
-    background-color: #1A212B;
+    background-color: $ink;
 }
 
 .boxcast-countdown-block {
@@ -840,7 +919,7 @@
 }
 .boxcast-title {
     font-size: 1.5rem !important;
-    color: #FFF !important;
+    color: $white !important;
     @include media-breakpoint-up(md) {
         font-size: 28px !important;
         line-height: 39px !important;
@@ -856,10 +935,74 @@
 .boxcast-start-stop {
     font-size: 17px !important;
     font-weight: 400 !important;
-    color: #FFF !important;
+    color: $white !important;
 }
 .boxcast-linkback,
 .boxcast-playlist,
 aside {
     display: none !important;
+}
+
+.pin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    margin: -20px 0 0 -20px;
+    background: $fresh;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    animation-name: bounce;
+    animation-fill-mode: both;
+    animation-duration: 1s;
+    &:after {
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        margin: 8px 0 0 8px;
+        background: $cream;
+        border-radius: 50%;
+        content: '';
+    }
+}
+    
+.pulse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -2;
+    width: 14px;
+    height: 14px;
+    margin: 11px 0px 0px -12px;
+    background: rgba(0, 0, 0, .2);
+    border-radius: 50%;
+    transform: rotateX(55deg);
+    &:after {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        margin: -13px 0 0 -13px;
+        border-radius: 50%;
+        box-shadow: 0 0 1px 2px $latte;
+        opacity: 0;
+        content: "";
+        animation-delay: 1.1s;
+        animation: pulsate 1s ease-out;
+        animation-iteration-count: infinite;
+    }
+}
+
+@keyframes pulsate {
+    0% {
+        transform: scale(0.1, 0.1);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1.0;
+    }
+    100% {
+        transform: scale(1.2, 1.2);
+        opacity: 0;
+    }
 }

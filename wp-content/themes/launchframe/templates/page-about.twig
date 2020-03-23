@@ -12,7 +12,6 @@
 		<div class="hero">
 			<div class="hero__slide hero__slide--series">
 	            <div class="u-abs-full bg-img" style="background-image: url('{{ fn('imgix', hero.bg_image, 1400) }}');"></div>
-				{# <a class="hero-content__button hero-content__button--play video-modal-trigger" href="#!" data-vimeoid="RFaIkp_m6HU">Play Video</a> #}
 	        </div>
 		</div>
 	{% endfor %}
@@ -22,18 +21,5 @@
 			{% include '_partial-flex-fields.twig' %}
 		</div>
 	</section>
-	
-	<div class="map">
-		<div class="map-card">
-			<div class="map-card__title">Join Us</div>
-			<div class="map-card__subtitle">Sundays at 8:30a, 9:50a and 11:10a</div>
-			<div class="map-card__text">
-				River Oaks Community Church <br />
-				{{ options.church_address }}
-			</div>
-			<a href="https://www.google.com/maps/place/River+Oaks+Community+Church/@35.8417792,-86.4741789,15z/data=!4m2!3m1!1s0x0:0x102b733a440b381a?sa=X&ved=2ahUKEwjI75q-2L3cAhVSG6wKHQf8CRUQ_BIwCnoECAsQCw" class="map-card__button btn btn-secondary">Get Directions</a>
-		</div>
-		<div id="map" class="u-abs-full bg-img bg-map" data-lattitude="35.841765" data-longitude="-86.474627"></div>
-	</div>
 
 {% endblock %}

@@ -8,7 +8,9 @@
             <div class="u-abs-full bg-img" style="background-image: url('{{ fn('imgix', post.get_field('series_artwork'), 1400) }}');"></div>
             {% if post.get_field('sermons') %}
 				{% for sermon in post.get_field('sermons')|slice(0,1) %}
-            		<a class="hero-content__button hero-content__button--play" href="{{ sermon.get_field('vimeo_id') }}" target="_blank">Play First Sermon</a>
+					<div class="hero-content__button-wrapper">
+            			<a class="hero-content__button hero-content__button--play" href="{{ sermon.get_field('vimeo_id') }}" target="_blank">Play First Sermon</a>
+            		</div>
             	{% endfor %}
 			{% endif %}
         </div>

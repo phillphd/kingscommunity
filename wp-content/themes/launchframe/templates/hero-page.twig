@@ -13,8 +13,15 @@
 			<h1 class="hero-content__title">{{ hero.title }}</h1>
 			<p class="hero-content__subtitle">{{ hero.subtitle }}</p>
 		</div>
-		{% if hero.button_text %}
-			<a class="hero-content__button" href="{{ hero.button_url }}">{{ hero.button_text }}</a>
+		{% if hero.button_text or hero.button_text_alt %}
+			<div class="hero-content__button-wrapper">
+				{% if hero.button_text %}
+					<a class="hero-content__button" href="{{ hero.button_url }}">{{ hero.button_text }}</a>
+				{% endif %}
+				{% if hero.button_text_alt %}
+					<a class="hero-content__button hero-content__button--alt" href="{{ hero.button_url_alt }}">{{ hero.button_text_alt }}</a>
+				{% endif %}
+			</div>
 		{% endif %}
 	</div>
 {% endfor %}

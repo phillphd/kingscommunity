@@ -1,0 +1,18 @@
+<div class="map">
+	<div class="map__image"></div>
+	<div class="map__overlay"></div>
+	<div class="map-card">
+		<div class="map-card__title">
+			<div class="map-card__marker">
+				<div class='pin'></div>
+				<div class='pulse'></div>
+			</div>
+			{{ options.map_card.map_card_title }}
+		</div>
+		<div class="map-card__subtitle">{{ options.map_card.map_card_subtitle }}</div>
+		<div class="map-card__text">
+			{{ options.church_address }}
+		</div>
+		<a href="{{ options.map_card.map_card_button_url }}" class="map-card__button btn btn-secondary">{{ options.map_card.map_card_button_text }}</a>
+	</div>
+</div>

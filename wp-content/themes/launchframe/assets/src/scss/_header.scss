@@ -11,11 +11,12 @@ header {
 }
 
 .logo-primary {
-    transform: scale(.5);
-    transform-origin: left center;
+    width: 127px;
+    padding-top: 1.5rem;
+    color: $white;
     @include media-breakpoint-up(lg) {
-        transform: scale(.65);
-        transform-origin: center;
+        width: 165px;
+        padding-top: 0;
     }
 }
 .main-nav {
@@ -315,20 +316,40 @@ header {
     &__subtitle {
         margin-bottom: 0;
     }
-    &__button {
-        @extend %btn;
+    &__button-wrapper {
         position: absolute;
         bottom: 40px;
         left: 50%;
         z-index: 9;
-        white-space: nowrap;
+        width: 100%;
+        text-align: center;
         transform: translateX(-50%);
         @include media-breakpoint-up(lg) {
             bottom: 64px;
         }
+    }
+    &__button {
+        @extend %btn;
+        padding: 8px 20px;
+        margin: 3px;
+        white-space: nowrap;
+        border: 2px solid $brand-primary;
+        @include media-breakpoint-up(md) {
+            padding: 16px 40px;
+            margin: 4px;
+            border: 3px solid $brand-primary;
+        }
+        &--alt {
+            color: $brand-primary;
+            background-color: $cream;
+        }
         &--play {
+            position: relative;
             width: auto;
             padding: 12px 56px 12px 20px;
+            @include media-breakpoint-up(md) {
+                padding: 12px 56px 12px 20px !important;
+            }
             &::after {
                 position: absolute;
                 top: 50%;

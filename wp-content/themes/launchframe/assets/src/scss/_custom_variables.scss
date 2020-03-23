@@ -23,28 +23,30 @@
 //
 // Grayscale and brand colors for use across Bootstrap.
 
-$white:                     #FFF;
-$light:                     #FFF;
+$cream:                     #EAEAE6;
+$ink:                       #26373F;
+$fresh:                     #ACC6C4;
+$vermillion:                #DD5344;
+$latte:                     #98897A;
+$royal:                     #8A576D;
+$clover:                    #70A58E;
+$saffron:                   #EEAB52;
+
+$white:                     $cream;
+$light:                     $cream;
 $dark:                      #211f1f;
 
-//$gray-dark:                 #373a3c;
-//$gray:                      #55595c;
 $gray-light:                #E8E8E8;
 $gray-lighter:              #EFEFEF;
-//$gray-lightest:             #f7f7f9;
 
-$brand-primary:             #b19a72;
+$brand-primary:             $vermillion;
 $blue:                      #273040;
-$blue-dark:                 #1A212B;
+$blue-dark:                 $ink;
 
 $yellow:                    #fdee22;
 $pink:                      #eb098c;
 $light-blue:                #29abe2;
 $green:                     #0fa549;
-//$brand-success:             #5cb85c;
-//$brand-info:                #5bc0de;
-//$brand-warning:             #f0ad4e;
-//$brand-danger:              #d9534f;
 
 // Options
 //

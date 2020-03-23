@@ -116,6 +116,7 @@ footer {
         }
     }
     img {
+        filter: grayscale(100%);
         transform: scale(.5);
         @include media-breakpoint-up(md) {
             transform-origin: left center;
