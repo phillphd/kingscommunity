@@ -6098,6 +6098,10 @@ header {
   background: transparent;
 }
 
+.hero__slide--ytbe {
+  max-width: 1400px;
+}
+
 .hero__slide--series {
   max-width: 948px;
 }
@@ -7570,6 +7574,36 @@ aside {
   }
 }
 
+.ytbe-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.ytbe-frame__wrapper {
+  position: relative;
+  z-index: 9;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.ytbe-frame__video {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.ytbe-frame__chat {
+  position: relative;
+  display: none;
+  width: 25%;
+  height: 100%;
+}
+
 @media (min-width: 576px) {
   .container {
     width: 540px;
@@ -8859,6 +8893,14 @@ aside {
   .boxcast-title {
     font-size: 28px !important;
     line-height: 39px !important;
+  }
+
+  .ytbe-frame__video {
+    width: 75%;
+  }
+
+  .ytbe-frame__chat {
+    display: block;
   }
 }
 

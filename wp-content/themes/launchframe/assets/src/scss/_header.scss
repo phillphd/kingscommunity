@@ -230,6 +230,9 @@ header {
                 background: transparent;
             }
         }
+        &--ytbe {
+            max-width: 1400px;
+        }
         &--series {
             max-width: 948px;
             .bg-img::after {
