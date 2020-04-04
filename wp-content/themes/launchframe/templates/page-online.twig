@@ -6,10 +6,10 @@
 		<div class="hero__slide hero__slide--ytbe">
 			<div class="ytbe-frame__wrapper">
 				<div class="ytbe-frame__video">
-					<iframe class="ytbe-frame" src="https://www.youtube.com/embed/rdZjLpqGXtI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					<iframe class="ytbe-frame" src="https://www.youtube.com/embed/{{ post.get_field('youtube_id') }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</div>
 				<div class="ytbe-frame__chat">
-					<iframe class="ytbe-frame" allowfullscreen="" frameborder="0" src="https://www.youtube.com/live_chat?v=rdZjLpqGXtI&embed_domain=kingscommunity.ch"></iframe>
+					<iframe class="ytbe-frame" allowfullscreen="" frameborder="0" src="https://www.youtube.com/live_chat?v={{ post.get_field('youtube_id') }}&embed_domain=kingscommunity.ch"></iframe>
 				</div>
 			</div>
 		</div>
