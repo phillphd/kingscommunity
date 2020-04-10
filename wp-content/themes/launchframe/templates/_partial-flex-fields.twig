@@ -152,5 +152,41 @@
 				</div>
 			</div>
 		</div>
+	{% elseif flex_field.acf_fc_layout == 'media_grid' %}
+		<div class="row row--media_grid">
+			{% for media_block in flex_field.media_block %}
+
+				{% if media_block.block_width == "quarter" %}
+					{% set col_width = "col-md-3" %}
+				{% elseif media_block.block_width == "third" %}
+					{% set col_width = "col-md-4" %}
+				{% elseif media_block.block_width == "half" %}
+					{% set col_width = "col-md-6" %}
+				{% elseif media_block.block_width == "two_thirds" %}
+					{% set col_width = "col-md-8" %}
+				{% endif %}
+
+				{% if media_block.link_type == "internal" %}
+					{% set block_url = media_block.internal_url %}
+				{% elseif media_block.link_type == "external" %}
+					{% set block_url = media_block.external_url %}
+				{% elseif media_block.link_type == "file" %}
+					{% set block_url = media_block.file %}
+				{% endif %}
+				
+				<div class="col-xs-6 {{ col_width }}">
+					<div class="mason-box">
+						<a href="{{ block_url }}" {% if media_block.link_type == "file" %}target="_blank"{% endif %}>
+							<div class="mason-box__image">
+								<div class="u-abs-full bg-img" style="background-image: url('{{ media_block.image }}');"></div>
+							</div>
+							<h3 class="mason-box__title">{{ media_block.title }}</h3>
+							<h6 class="mason-box__subtitle">{{ media_block.subtitle }}</h6>
+						</a>
+					</div>
+				</div>
+
+			{% endfor %}
+		</div>
 	{% endif %}
 {% endfor %}

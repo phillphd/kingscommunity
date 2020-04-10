@@ -770,6 +770,7 @@ html {
     }
     @include media-breakpoint-up(xl) {
         padding: 4rem 6rem;
+        margin: 0 -15px 5rem;
     }
     &__content {
         margin-right: auto;
@@ -1036,5 +1037,44 @@ aside {
         @include media-breakpoint-up(md) {
             display: block;
         }
+    }
+}
+
+.mason-box {
+    width: 100%;
+    margin: 16px 0;
+    &__image {
+        position: relative;
+        height: 125px;
+        overflow: hidden;
+        margin-bottom: 8px;
+        background-color: $gray-lighter;
+        border-radius: 12px;
+        box-shadow: 0 14px 18px -7px fade-out(#273040, .8);
+    }
+    &__title {
+        padding: 0 6px;
+        margin-bottom: 4px;
+        font-size: 19px;
+        line-height: 1;
+    }
+    &__subtitle {
+        padding: 0 6px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: $dark;
+        text-transform: uppercase;
+        font-style: italic;
+    }
+}
+
+.row--media_grid {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    @include media-breakpoint-up(xl) {
+        margin: 0 -30px;
     }
 }

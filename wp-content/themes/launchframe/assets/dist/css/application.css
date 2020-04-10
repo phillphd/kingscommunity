@@ -7604,6 +7604,47 @@ aside {
   height: 100%;
 }
 
+.mason-box {
+  width: 100%;
+  margin: 16px 0;
+}
+
+.mason-box__image {
+  position: relative;
+  height: 125px;
+  overflow: hidden;
+  margin-bottom: 8px;
+  background-color: #EFEFEF;
+  border-radius: 12px;
+  box-shadow: 0 14px 18px -7px rgba(39, 48, 64, 0.2);
+}
+
+.mason-box__title {
+  padding: 0 6px;
+  margin-bottom: 4px;
+  font-size: 19px;
+  line-height: 1;
+}
+
+.mason-box__subtitle {
+  padding: 0 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #211f1f;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+.row--media_grid {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
 @media (min-width: 576px) {
   .container {
     width: 540px;
@@ -10147,6 +10188,11 @@ aside {
 
   .cta {
     padding: 4rem 6rem;
+    margin: 0 -15px 5rem;
+  }
+
+  .row--media_grid {
+    margin: 0 -30px;
   }
 }
 
