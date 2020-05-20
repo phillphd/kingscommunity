@@ -38,7 +38,7 @@
 			<div class="col-md-12">
 				<h2>{{ flex_field.header }}</h2>
 				<p>{{ flex_field.body }}</p>
-				{% if flex_field.button_text %}
+				{% if flex_field.add_button %}
 					<a href="{{ flex_field.button_url }}" class="btn btn-primary vm-xs-top-1">{{ flex_field.button_text }}</a>
 				{% endif %}
 			</div>
@@ -53,6 +53,9 @@
 		<div class="row vp-xs-top-2 vp-xs-bottom-2 vp-md-top-4 vp-md-bottom-4 vm-xs-top-2 vm-xs-bottom-2">
 			<div class="col-md-8 offset-md-2">
 				{{ flex_field.wysiwyg }}
+				{% if flex_field.add_button %}
+					<a href="{{ flex_field.button_url }}" class="btn btn-primary vm-xs-top-1">{{ flex_field.button_text }}</a>
+				{% endif %}
 			</div>
 		</div>
 	{% elseif flex_field.acf_fc_layout == 'staff_profiles' %}
@@ -99,7 +102,7 @@
 		</div>
 	{% elseif flex_field.acf_fc_layout == 'faq' %}
 		<div class="row vp-xs-top-2 vp-xs-bottom-2 vp-md-top-4 vp-md-bottom-4 vm-xs-top-2 vm-xs-bottom-2">
-			<div class="col-xs-12">
+			<div class="col-md-10 offset-md-1">
 				<h2 class="vm-xs-bottom-2">{{ flex_field.faq_title }}</h2>
 				<ul class="faq">
 					{% for faq in flex_field.faqs %}
@@ -178,7 +181,12 @@
 					<div class="mason-box">
 						<a href="{{ block_url }}" {% if media_block.link_type == "file" %}target="_blank"{% endif %}>
 							<div class="mason-box__image">
-								<div class="u-abs-full bg-img" style="background-image: url('{{ media_block.image }}');"></div>
+								{% if media_block.background_type == "image" %}
+									<div class="u-abs-full bg-img" style="background-image: url('{{ media_block.background_image }}');"></div>
+								{% else %}
+									<div class="u-abs-full" style="background-color: {{ media_block.background_color }};"></div>
+								{% endif %}
+								<h4 class="mason-box__background-text">{{ media_block.background_text }}</h4>
 							</div>
 							<h3 class="mason-box__title">{{ media_block.title }}</h3>
 							<h6 class="mason-box__subtitle">{{ media_block.subtitle }}</h6>

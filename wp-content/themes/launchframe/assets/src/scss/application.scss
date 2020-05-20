@@ -345,11 +345,9 @@ html {
             height: 2px;
         }
         .faq__question {
-            padding: 20px 10px;
             padding-right: 50px;
             background-color: transparent;
-            border: 1px solid transparent;
-            border-bottom: 1px solid $brand-primary;
+            border: 1px solid $fresh;
             &:hover {
                 background-color: transparent;
             }
@@ -394,7 +392,7 @@ html {
         padding-right: 50px;
         font-size: 19px;
         color: $blue-dark;
-        background-color: $brand-primary;
+        background-color: $fresh;
         border-radius: 10px;
         box-shadow: 0 14px 18px -7px fade-out($blue, .8);
         transition: .4s;
@@ -426,6 +424,9 @@ html {
         overflow: hidden;
         background-color: fade-out($gray-lighter, .5);
         transition: max-height .4s ease-out, padding-top .4s ease-out, padding-bottom .4s ease-out;
+        p {
+            margin-bottom: 0;
+        }
     }
     ul {
         margin: 0 0 20px;
@@ -1051,12 +1052,29 @@ aside {
         background-color: $gray-lighter;
         border-radius: 12px;
         box-shadow: 0 14px 18px -7px fade-out(#273040, .8);
+        transition: .25s ease;
+    }
+    &__background-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 9;
+        width: 100%;
+        padding: 2px 15px 0;
+        margin: 0;
+        font-family: 'Work Sans',sans-serif;
+        font-weight: 700;
+        text-align: center;
+        color: $light;
+        text-transform: uppercase;
+        transform: translate(-50%, -50%);
     }
     &__title {
         padding: 0 6px;
         margin-bottom: 4px;
         font-size: 19px;
         line-height: 1;
+        transition: .35s ease;
     }
     &__subtitle {
         padding: 0 6px;
@@ -1066,6 +1084,18 @@ aside {
         color: $dark;
         text-transform: uppercase;
         font-style: italic;
+        transition: .35s ease;
+    }
+    &:hover {
+        .mason-box__image {
+            transform: translateY(-4px);
+            transition: .25s ease;
+        }
+        .mason-box__title,
+        .mason-box__subtitle {
+            transform: translateY(-2px);
+            transition: .35s ease;
+        }
     }
 }
 

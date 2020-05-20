@@ -4,17 +4,21 @@
 <!--[if IE 8]><html class="no-js ie ie8 lt-ie9" {{site.language_attributes}}> <![endif]-->
 <!--[if gt IE 8]><!--><html class="no-js" {{site.language_attributes}}> <!--<![endif]-->
 <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-KLHDPK5');</script>
-    <!-- End Google Tag Manager -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161794363-3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-161794363-3');
+    </script>
+
     <meta charset="{{site.charset}}" />
-        <title>   
-            {% if wp_title %}{{ wp_title }} - {{ site.name }}{% else %}{{ site.name }}{% endif %}
-        </title>
+    <title>   
+        {% if wp_title %}{{ wp_title }} - {{ site.name }}{% else %}{{ site.name }}{% endif %}
+    </title>
+
     <meta name="description" content="{{site.description}}">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -24,7 +28,7 @@
     <meta name="description" content="We are a Christ-centered community bringing God’s story to life by making missional disciples.">
     <meta property="og:title" content="{% if wp_title %}{{ wp_title }} - {{ site.name }}{% else %}{{ site.name }}{% endif %}">
     <meta property="og:description" content="We are a Christ-centered community bringing God’s story to life by making missional disciples">
-    <meta property="og:image" content="http://kingscommunity.ch/wp-content/uploads/2019/02/kings-community_graphics-08-1.png">
+    <meta property="og:image" content="{{ options.share_image.url }}">
     <meta property="og:url" content="https://kingscommunity.ch">
     <meta property="og:type" content="website" />
     <meta property="fb:app_id" content="2323116271250069"/>
