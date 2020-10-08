@@ -26,7 +26,7 @@
 $cream:                     #EAEAE6;
 $ink:                       #26373F;
 $fresh:                     #ACC6C4;
-$vermillion:                #DD5344;
+$vermillion:                #CD4F42;
 $latte:                     #98897A;
 $royal:                     #8A576D;
 $clover:                    #70A58E;
@@ -35,6 +35,7 @@ $saffron:                   #EEAB52;
 $white:                     $cream;
 $light:                     $cream;
 $dark:                      #211f1f;
+$dark-alt:                  #243135;
 
 $gray-light:                #E8E8E8;
 $gray-lighter:              #EFEFEF;
@@ -132,6 +133,9 @@ $grid-gutter-width:          2.5rem; // 30px
 // Font, line-height, and color for body text, headings, and more.
 
 $font-family-sans-serif:     'Nunito', sans-serif;
+$font-family-sans-serif-alt: 'Work Sans', sans-serif;
+$font-family-brush:          'brush', sans-serif;
+
 //$font-family-serif:          Georgia, "Times New Roman", Times, serif;
 //$font-family-monospace:      Menlo, Monaco, Consolas, "Courier New", monospace;
 //$font-family-base:           //$font-family-sans-serif;

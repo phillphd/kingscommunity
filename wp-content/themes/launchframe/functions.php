@@ -41,7 +41,7 @@ class LaunchframeSite extends TimberSite {
 		wp_enqueue_style( 'slick-style', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', true, $package_version );
 		wp_enqueue_style( 'application-style', get_template_directory_uri() . '/assets/dist/css/application.min.css', true, $package_version );
 		wp_enqueue_style( 'nunito-style', 'https://fonts.googleapis.com/css?family=Nunito:400,400i,600,600i,700,700i', true, $package_version );
-		wp_enqueue_style( 'work-sans-style', 'https://fonts.googleapis.com/css?family=Work+Sans:400,800', true, $package_version );
+		wp_enqueue_style( 'work-sans-style', 'https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,800', true, $package_version );
 	}
 
 	function register_scripts() {
@@ -161,7 +161,8 @@ add_filter('timber_context', 'mytheme_timber_context');
 // -------------------------------------------------------------------------
 
 function imgix($image_url, $width = '') {
-	$imgix_domain = 'https://kingscc.imgix.net';
+	// $imgix_domain = 'https://kingscc.imgix.net';
+	$imgix_domain = 'http://kcc.local';
 	// $imgix_domain = '//kingscommunity.ch';
 	$the_url = parse_url($image_url, 5);
 	$the_params = '?auto=compress,format&w=' . $width;

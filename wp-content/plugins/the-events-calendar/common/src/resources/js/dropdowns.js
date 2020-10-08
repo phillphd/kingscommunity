@@ -1,4 +1,5 @@
 /* global console, jQuery */
+/* eslint-disable no-var, strict */
 var tribe_dropdowns = window.tribe_dropdowns || {};
 
 ( function( $, obj, _ ) {
@@ -49,9 +50,6 @@ var tribe_dropdowns = window.tribe_dropdowns || {};
 		return null;
 	};
 
-	obj.allow_html_markup = function ( m ) {
-		return m;
-	};
 
 	/**
 	 * Better Search ID for Select2, compatible with WordPress ID from WP_Query
@@ -264,11 +262,6 @@ var tribe_dropdowns = window.tribe_dropdowns || {};
 			args.placeholder = $select.attr( 'placeholder' );
 		}
 
-		// Don't Remove HTML elements or escape elements
-		if ( $select.is( '[data-allow-html]' ) ) {
-			args.escapeMarkup = obj.allow_html_markup;
-		}
-
 		// If we are dealing with a Input Hidden we need to set the Data for it to work.
 		if ( $select.is( '[data-options]' ) ) {
 			args.data = $select.data( 'options' );
@@ -355,9 +348,6 @@ var tribe_dropdowns = window.tribe_dropdowns || {};
 			// For AJAX we reset the data
 			args.data = { results: [] };
 
-			// Allows HTML from Select2 AJAX calls
-			args.escapeMarkup = obj.allow_html_markup;
-
 			// Format for Parents breadcrumbs
 			args.formatResult = function ( item, container, query ) {
 				if ( 'undefined' !== typeof item.breadcrumbs ) {
@@ -411,6 +401,48 @@ var tribe_dropdowns = window.tribe_dropdowns || {};
 					args: $select.data( 'source-args' ),
 				};
 			};
+		}
+
+		// Attach dropdown to container in DOM.
+		if ( $select.is( '[data-attach-container]' ) ) {
+
+			// If multiple, attach container without search.
+			if ( $select.is( '[multiple]' ) ) {
+				$.fn.select2.amd.define(
+					'AttachedDropdownAdapter',
+					[
+						'select2/utils',
+						'select2/dropdown',
+						'select2/dropdown/attachContainer',
+					],
+					function( utils, dropdown, attachContainer ) {
+						return utils.Decorate( dropdown, attachContainer );
+					}
+				);
+
+				args.dropdownAdapter = $.fn.select2.amd.require( 'AttachedDropdownAdapter' );
+
+			// If not multiple, attach container with search.
+			} else {
+				$.fn.select2.amd.define(
+					'AttachedWithSearchDropdownAdapter',
+					[
+						'select2/utils',
+						'select2/dropdown',
+						'select2/dropdown/search',
+						'select2/dropdown/minimumResultsForSearch',
+						'select2/dropdown/attachContainer',
+					],
+					function( utils, dropdown, search, minimumResultsForSearch, attachContainer ) {
+						var adapter = utils.Decorate( dropdown, attachContainer );
+						adapter = utils.Decorate( adapter, search );
+						adapter = utils.Decorate( adapter, minimumResultsForSearch );
+						return adapter;
+					}
+				);
+
+				args.dropdownAdapter = $.fn.select2.amd.require( 'AttachedWithSearchDropdownAdapter' );
+			}
 		}
 
 		// Save data on Dropdown

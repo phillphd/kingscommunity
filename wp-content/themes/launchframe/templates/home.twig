@@ -2,42 +2,112 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	{% if post.get_field('hero')|length > 1 %}
-		<div class="hero big-slick">
-			{% include 'hero-home.twig' %}
-			<div class="round-edge"></div>
+	<div class="hero hero--home">
+		<div class="hero__slide">
+			<div class="u-abs-full bg-img" style="background-image: url('{{ post.get_field('hero_background_image') }}');"></div>
+			{% if hero.bg_video %}
+				<video loop="true" autoplay="autoplay" playsinline="true" muted>
+		    		{% if hero.bg_video_url_webm %}<source src="{{ hero.bg_video_url_webm }}" type="video/webm">{% endif %}
+		    		{% if hero.bg_video_url_mp4 %}<source src="{{ hero.bg_video_url_mp4 }}" type="video/mp4">{% endif %}
+				</video>
+			{% endif %}
+			<div class="hero__content hero-content">
+				<h1 class="hero-content__title">Bringing God's Story</h1>
+				<p class="hero-content__subtitle">to life.</p>
+			</div>
 		</div>
-	{% else %}
-		<div class="hero">
-			{% include 'hero-page.twig' %}
-			<div class="round-edge"></div>
-		</div>
-	{% endif %}
+		<div class="round-edge"></div>
+	</div>
 
-	{# <a class="hero-content__button hero-content__button--play video-modal-trigger" href="#!" data-vimeoid="RFaIkp_m6HU">Play Video</a> #}
-
-	{% if post.get_field('home_cta_title') %}
-		<section class="container">
-			<div class="cta">
-				<div class="cta__content">
-					<h3 class="cta__title">{{ post.get_field('home_cta_title') }}</h3>
-					<p class="cta__text">
-						{{ post.get_field('home_cta_subtitle') }}
-					</p>
-				</div>
-				<div class="cta__button">
-					<a href="{{ post.get_field('home_cta_button_url') }}">
-						{{ post.get_field('home_cta_button_text') }}
-					</a>
+	<div class="container">
+		<div class="lead-in">
+			<div class="lead-in__half lead-in__half--first">
+				<div class="lead-in__image" style="background-image: url({{ post.get_field('leadin_image') }})">
+					<div class="lead-in__texture" style="background-image: url({{ theme.link }}/assets/src/img/texture-1.svg)"></div>
 				</div>
 			</div>
-		</section>
-	{% endif %}
+			<div class="lead-in__half lead-in__half--second">
+				<div class="lead-in__content">
 
-	<section style="position: relative;">
-		<div class="container">
-			{% include '_partial-flex-fields.twig' %}
+					<h3 class="lead-in__title">
+						{{ post.get_field('leadin_title') }}
+					</h3>
+					<p class="lead-in__subtitle">
+						{{ post.get_field('leadin_text') }}
+					</p>
+
+					{% set button_1 = post.get_field('leadin_button_1') %}
+					<a class="lead-in__button" href="{{ button_1.button_url }}">
+						{{ button_1.button_text }}
+					</a>
+
+					{% set button_2 = post.get_field('leadin_button_2') %}
+					<a class="lead-in__button" href="{{ button_2.button_url }}">
+						{{ button_2.button_text }}
+					</a>
+
+				</div>
+			</div>
 		</div>
-	</section>
+	</div>
+
+	<div class="container">
+		<div class="tri-grid">
+			
+			{% for card in post.get_field('card_grid') %}
+				<div class="tri-item">
+
+					<div class="tri-item__image" style="background-image: url({{ card.image }});"></div>
+					<h4 class="tri-item__title">
+						{{ card.title }}
+					</h4>
+					<p class="tri-item__text">
+						{{ card.text }}
+					</p>
+					<a class="tri-item__button" href="{{ card.button_url }}">
+						{{ card.button_text }}
+					</a>
+
+				</div>
+			{% endfor %}
+
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="featured-message">
+			<div class="featured-message__card">
+				<div class="featured-message__supertitle-bg">
+					<h5 class="featured-message__supertitle">
+						{{ post.get_field('message_supertitle') }}
+					</h5>
+				</div>
+				<div class="featured-message__content">
+
+					<h3 class="featured-message__title">
+						{{ post.get_field('message_title') }}
+					</h3>
+					<h5 class="featured-message__subtitle">
+						{{ post.get_field('message_subtitle') }}
+					</h5>
+					<p class="featured-message__text">
+						{{ post.get_field('message_text') }}
+					</p>
+
+					{% set message_button = post.get_field('message_button') %}
+					<a class="featured-message__button" href="{{ message_button.button_url }}">
+						{{ message_button.button_text }}
+					</a>
+
+				</div>
+			</div>
+			<div class="featured-message__image">
+				<div class="featured-message__image artwork" style="background-image: url({{ post.get_field('message_image') }});"></div>
+				<div class="featured-message__texture">
+					{% include 'assets/src/img/texture-2.svg' %}
+				</div>
+			</div>
+		</div>
+	</div>
 
 {% endblock %}

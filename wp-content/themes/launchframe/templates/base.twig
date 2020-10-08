@@ -7,22 +7,21 @@
 	</head>
 {% endblock %}
 
+	{% if options.alert_title %}
+		<div class="alert-wrapper">
+			<div class="alert">
+				<div class="alert__content">
+					<div class="alert__header">{{ options.alert_title }}</div>
+					<a class="alert__button" href="{{ options.alert_button_url }}">{{ options.alert_button_text }} &rarr;</a>
+				</div>
+			</div>
+		</div>
+	{% endif %}
+
 	<body class="{{body_class}} {% for hero in post.get_field('hero') %}{% if hero.minimal_hero %}minimal-hero{% endif %}{% endfor %}" data-template="base.twig">  {# minimal-hero #}
 		<!-- Google Tag Manager (noscript) -->
 		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLHDPK5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<!-- End Google Tag Manager (noscript) -->
-		
-		{% if options.alert_title %}
-			<div class="alert-wrapper">
-				<div class="alert">
-					<div class="alert__content">
-						<div class="alert__header">{{ options.alert_title }}</div>
-						<div class="alert__subheader">{{ options.alert_subtitle }}</div>
-						<a class="alert__button btn" href="{{ options.alert_button_url }}">{{ options.alert_button_text }}</a>
-					</div>
-				</div>
-			</div>
-		{% endif %}
 		
 		<header>
 			<a href="/">
@@ -38,18 +37,6 @@
 			{% block content %}
 				Sorry, no content
 			{% endblock %}
-
-			<div class="container">
-				<div class="row">
-					<div class="col" style="text-align: center;">
-						<div class="cta-connect">
-							<p class="cta-connect__title">Sign-up for our newsletter <a href="http://eepurl.com/dFoApf" target="_blank"><i class="fas fa-envelope-open-text"></i></a> &nbsp; Connect with us <a href="https://www.facebook.com/kingscommunitych/" target="_blank"><i class="fab fa-facebook-f"></i></a> <a href="https://www.instagram.com/kingscommunitych/" target="_blank"><i class="fab fa-instagram"></i></a></p>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			{% include '_partial-map-box.twig' %}
 		</main>
 
 		{% block footer %}

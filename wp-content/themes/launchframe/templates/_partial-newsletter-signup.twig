@@ -1,0 +1,29 @@
+<div class="newsletter">
+	<div class="newsletter__content">
+		<div class="newsletter__icon">
+			{% include 'assets/src/img/envelope-shield.svg' %}
+		</div>
+		<h2 class="newsletter__title">
+			Stay up to date
+		</h2>
+		<p class="newsletter__text">
+			The King's Weekly is the best way to stay up to date in an ever changing world. Get updates about the church, events, initiatives, and other important info delivered straight to your inbox!
+		</p>
+		<div class="newsletter__form">
+			<form class="signup" action="https://kingscommunity.us16.list-manage.com/subscribe/post?u=e92e1534856f7a14a27bc4026&amp;id=fafd22e384" method="post" aria-labelledby="newsletter-headline">
+				<input class="signup__input" aria-label="Email address" type="email" placeholder="Email Address" required>
+				<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_e92e1534856f7a14a27bc4026_fafd22e384" tabindex="-1" value=""></div>
+				<div class="">
+					<button class="signup__button">
+						Sign Up
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="newsletter__texture">
+		{% include 'assets/src/img/texture-1.svg' with {
+			'class': 'texture-color--red'
+		} %}
+	</div>
+</div>

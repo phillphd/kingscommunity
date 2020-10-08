@@ -30,3 +30,9 @@
 .u-color-primary {
     color: $brand-primary;
 }
+
+.texture-color {
+    &--red {
+        fill: #D15F51;
+    }
+}

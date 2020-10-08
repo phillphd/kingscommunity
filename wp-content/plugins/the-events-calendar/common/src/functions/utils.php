@@ -645,6 +645,15 @@ if ( ! function_exists( 'tribe_register_rest_route' ) ) {
 		 */
 		$args = apply_filters( 'tribe_register_rest_route_args', $args, $namespace, $route, $override );
 
+		// Compatibility with version 5.5 of WordPress to avoid notices.
+		if (
+			! empty( $args['callback'] )
+			&& is_callable( $args['callback'] )
+			&& ! isset( $args['permission_callback'] )
+		) {
+			$args['permission_callback'] = '__return_true';
+		}
+
 		return register_rest_route( $namespace, $route, $args, $override );
 	}
 }
@@ -1053,5 +1062,49 @@ if ( ! function_exists( 'tribe_get_query_var' ) ) {
 			(array) $parsed,
 			array_combine( $query_args, $query_args )
 		);
+	}
+}
+
+if ( ! function_exists( 'tribe_without_filters' ) ) {
+	/**
+	 * Runs a callback or Closure taking care to detach and reattach a set of filters.
+	 *
+	 * The purpose of this function is to make sure a certain callback will run in a "clean" filter environment where
+	 *  a set of filters (and actions) has been suspended to avoid side effects from applying to it.
+	 * The function guarantees the existing filters will be detached and re-attached only to run the callback, avoiding
+	 * issues where some piece of code might detach some filters and not re-attach them due to errors.
+	 *
+	 * @since 4.12.10
+	 *
+	 * @param array<string> $filters    A set of filter, or actions, handles to detach before running the callback and
+	 *                                  re-attach after.
+	 * @param callable      $do         The callback, or Closure, that should run in the context where the specified set of filters
+	 *                                  has been "suspended".
+	 *
+	 * @return mixed The result of the callback function.
+	 */
+	function tribe_without_filters( array $filters, callable $do ) {
+		$filter_backups = [];
+		// If none of the filters to skip has anything attached to it, then skip it.
+		$hooked_filters = array_filter( $filters, 'has_filter' );
+
+		if ( empty( $hooked_filters ) ) {
+			// No filter has functions attached to it, just return the callback invocation.
+			return $do();
+		}
+
+		foreach ( $hooked_filters as $tag ) {
+			$filter_backups[ $tag ] = $GLOBALS['wp_filter'][ $tag ];
+			// A `null` entry will be parsed, from filter API functions, as a filter that has nothing on it.
+			$GLOBALS['wp_filter'][ $tag ] = null;
+		}
+
+		$result = $do();
+
+		foreach ( $filter_backups as $tag => $filter_backup ) {
+			$GLOBALS['wp_filter'][ $tag ] = $filter_backup;
+		}
+
+		return $result;
 	}
 }

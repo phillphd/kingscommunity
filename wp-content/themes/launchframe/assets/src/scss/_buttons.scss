@@ -1,0 +1,174 @@
+.btn,
+%btn {
+    padding: 16px 40px;
+    font-weight: 700;
+    color: $white;
+    background-color: $brand-primary;
+    border-radius: 4px;
+    box-shadow: 0 16px 16px -10px fade-out($blue, .8);
+    transition: .25s;
+    &:hover,
+    &:active,
+    &:focus {
+        color: $white;
+        text-decoration: none;
+        background-color: darken($brand-primary, 10%);
+    }
+    &:active,
+    &:focus {
+        background-color: darken($brand-primary, 20%);
+    }
+    &--white {
+        color: $blue-dark;
+        background-color: $white;
+    }
+    &-primary {
+        padding: 15px 30px;
+        margin-bottom: 20px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    &-secondary {
+        position: relative;
+        display: inline-block;
+        padding: 12px 56px 12px 20px;
+        color: $white;
+        background-color: $brand-primary;
+        border: 0;
+        transition: .25s;
+        &::after {
+            position: absolute;
+            top: 50%;
+            right: 21px;
+            width: 22px;
+            height: 13px;
+            background-image: url("../../src/img/arrow.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            content: "";
+            transform: translateY(-50%);
+        }
+        &:hover,
+        &:active,
+        &:focus {
+            padding: 12px 64px 12px 20px;
+            color: $white;
+            background-color: darken($brand-primary, 10%);
+            box-shadow: 0 9px 8px -7px fade-out($blue, .75);
+        }
+        &:active,
+        &:focus {
+            background-color: darken($brand-primary, 20%);
+        }
+    }
+    &-footer {
+        position: relative;
+        display: inline-block;
+        padding: 12px 56px 12px 20px;
+        margin-left: 15px;
+        color: $dark;
+        background-color: $white;
+        border: 0;
+        transition: .25s;
+        @include media-breakpoint-up(lg) {
+            margin-left: 0;
+        }
+        &::after {
+            position: absolute;
+            top: 50%;
+            right: 21px;
+            width: 22px;
+            height: 13px;
+            background-image: url("../../src/img/arrow.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            content: "";
+            transform: translateY(-50%);
+        }
+        &:hover,
+        &:active,
+        &:focus {
+            padding: 12px 64px 12px 20px;
+            color: $dark;
+            background-color: darken($white, 10%);
+            box-shadow: 0 9px 8px -7px fade-out($blue, .75);
+        }
+        &:active,
+        &:focus {
+            background-color: darken($white, 20%);
+        }
+    }
+}
+
+.primary-btn,
+%primary-btn {
+    position: relative;
+    display: inline-block;
+    padding: 10px 48px 10px 26px;
+    font-family: $font-family-sans-serif-alt;
+    font-size: .75rem;
+    font-weight: 500;
+    letter-spacing: .05px;
+    color: $white;
+    text-transform: uppercase;
+    background-color: $brand-primary;
+    border-radius: 4px;
+    transition: .25s;
+    @include media-breakpoint-up(md) {
+        font-size: .875rem;
+    }
+    &::after {
+        position: absolute;
+        top: 50%;
+        right: 26px;
+        content: "→";
+        transform: translateY(-50%);
+        transition: .25s;
+    }
+    &:hover,
+    &:active,
+    &:focus {
+        color: $white;
+        text-decoration: none;
+        background-color: darken($brand-primary, 10%);
+        &::after {
+            right: 20px;
+        }
+    }
+    &:active,
+    &:focus {
+        background-color: darken($brand-primary, 20%);
+    }
+}
+
+.btn-play,
+%btn-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 9;
+    width: 56px;
+    height: 56px;
+    background-color: $brand-primary;
+    border-radius: 50%;
+    content: "";
+    opacity: 0;
+    transform: translateY(-50%) translateX(-50%);
+    transition: .4s;
+    &::after {
+        position: absolute;
+        top: 50%;
+        left: 52%;
+        width: 0;
+        height: 0;
+        border-top: 9px solid transparent;
+        border-bottom: 9px solid transparent;
+        border-left: 16px solid $blue-dark;
+        border-radius: 3px;
+        content: "";
+        opacity: .5;
+        transform: translate(-50%, -50%);
+    }
+}
